@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Web_Assignment_2_To_Dos.Data;
 
 namespace Web_Assignment_2_To_Dos.Pages
 {
@@ -21,5 +22,15 @@ namespace Web_Assignment_2_To_Dos.Pages
         {
 
         }
+        public void OnPost()
+        {
+            if (ModelState.IsValid)
+            {
+
+            } 
+        }
+
+        [FromForm]
+        public To_Do To_Do { get; set; }
     }
 }

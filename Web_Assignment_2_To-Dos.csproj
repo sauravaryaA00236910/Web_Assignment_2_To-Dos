@@ -5,4 +5,7 @@
     <RootNamespace>Web_Assignment_2_To_Dos</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
 </Project>
