@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Web_Assignment_2_To_Dos.Data.Context;
 
 namespace Web_Assignment_2_To_Dos
 {
@@ -24,6 +26,8 @@ namespace Web_Assignment_2_To_Dos
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            //services.AddDbContext<To_DoContext>(
+            //    options => options.UseSqlite("name = ConnectionString: DefaultConnection "));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

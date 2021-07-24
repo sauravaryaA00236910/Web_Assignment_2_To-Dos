@@ -3,15 +3,22 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    ViewData["Done"] = "Done";
+    ViewData["Name"] = "Name";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+@section Scripts{
+    <script src ="~/js/site.js" asp-append-version="true"></script>
+    <partial name="_ValidationScriptsPartial"/>
+} 
 
-<form method="post">
-    <input type="checkbox" name="Done" />
-    <input type="text" name="Name" />
-    <input type ="submit" name="Submit" />
+
+<form asp-page="Index">
+    <partial name="_To_DoInput" view-data="ViewData"/>
+    <partial name="_To_DoInput" view-data="ViewData"/>
+    <input type="submit" name="Submit" />
 </form>

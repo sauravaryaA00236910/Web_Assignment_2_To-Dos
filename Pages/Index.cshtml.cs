@@ -20,7 +20,10 @@ namespace Web_Assignment_2_To_Dos.Pages
 
         public void OnGet()
         {
+            if (ModelState.IsValid)
+            {
 
+            }
         }
         public void OnPost()
         {
