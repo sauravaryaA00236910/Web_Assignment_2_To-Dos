@@ -5,12 +5,9 @@
     
 }
 
-<div>
-    <label asp-for="@ViewData["Done"]"></label>
-    <input asp-for="@ViewData["Done"]" />
-</div>
-<div>
-    <label asp-for="@ViewData["Name"]"></label>
-    <input asp-for="@ViewData["Name"]" />
-    <span asp-validation-for="@Model"></span>
-</div>
+<section class="To_DoFields">
+    <input type="checkbox" name=@ViewData["Done"] class="To_DoFields_Done" />
+    <input type="text" name=@ViewData["Name"] class="To_DoFields_Name" />
+    <input type="datetime" name=@ViewData["EntryDate"] class="To_DoFields_EntryDate" />
+
+</section>

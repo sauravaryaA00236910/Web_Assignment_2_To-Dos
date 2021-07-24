@@ -3,8 +3,11 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
-    ViewData["Done"] = "Done";
-    ViewData["Name"] = "Name";
+    ViewData["To_DoFields_Done"] = "Done";
+    ViewData["To_DoFields_Name"] = "Name";
+    ViewData["To_DoFields_EntryDate"] = "EntryDate";
+
+
 }
 
 <div class="text-center">
@@ -18,7 +21,6 @@
 
 
 <form asp-page="Index">
-    <partial name="_To_DoInput" view-data="ViewData"/>
     <partial name="_To_DoInput" view-data="ViewData"/>
     <input type="submit" name="Submit" />
 </form>
