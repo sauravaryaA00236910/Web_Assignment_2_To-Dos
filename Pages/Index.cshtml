@@ -1,26 +1,23 @@
 ﻿@page
-@using Web_Assignment_2_To_Dos
+@*@using Web_Assignment_2_To_Dos*@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
-    ViewData["To_DoFields_Done"] = "Done";
-    ViewData["To_DoFields_Name"] = "Name";
-    ViewData["To_DoFields_EntryDate"] = "EntryDate";
-
-
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-@section Scripts{
-    <script src ="~/js/site.js" asp-append-version="true"></script>
-    <partial name="_ValidationScriptsPartial"/>
-} 
 
+@*<form>
+    @foreach (var entry in Model.To_DoLog)
+    {
+        <partial name="_To_DoInput" model ="@entry" />
+    }
+    <input type="submit" name="Submit" />
+</form>*@
 
-<form asp-page="Index">
-    <partial name="_To_DoInput" view-data="ViewData"/>
+<form asp-page="./Index" method="post">
+    <label asp-for="To_do.Done">Done? </label><input asp-for="To_do.Done"/>
+    <label asp-for="To_do.To_DoItem">To_DoItem: </label><input asp-for="To_do.To_DoItem"/>
+    <label asp-for="To_do.EntryDate">EntryDate: </label><input asp-for="To_do.EntryDate" />
     <input type="submit" name="Submit" />
 </form>
+

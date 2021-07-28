@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Web_Assignment_2_To_Dos.Data;
+using Web_Assignment_2_To_Dos.Data.Context;
 
 namespace Web_Assignment_2_To_Dos.Pages
 {
@@ -13,27 +14,30 @@ namespace Web_Assignment_2_To_Dos.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        private To_DoContext _context{get;set;}
+
+        public IEnumerable<To_Do> To_DoLog;
+
+        [FromForm]
+        public To_Do To_do { get; set; }
+
+        public IndexModel(ILogger<IndexModel> logger, To_DoContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public void OnGet()
         {
-            if (ModelState.IsValid)
-            {
-
-            }
+            To_DoLog = _context.To_Dos.ToList();
         }
         public void OnPost()
         {
-            if (ModelState.IsValid)
-            {
-
-            } 
+            var x = To_do;
         }
 
-        [FromForm]
-        public To_Do To_Do { get; set; }
+        //[FromForm]
+        //public To_Do To_Do { get; set; }
+        //public object ModelState { get; private set; }
     }
 }

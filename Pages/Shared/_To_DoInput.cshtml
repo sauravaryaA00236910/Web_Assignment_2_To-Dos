@@ -1,13 +1,20 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model Web_Assignment_2_To_Dos.Data.To_Do
 @{
-    
+
 }
 
-<section class="To_DoFields">
-    <input type="checkbox" name=@ViewData["Done"] class="To_DoFields_Done" />
-    <input type="text" name=@ViewData["Name"] class="To_DoFields_Name" />
-    <input type="datetime" name=@ViewData["EntryDate"] class="To_DoFields_EntryDate" />
+@*<form class="To_Do">
+        <input type="checkbox" name="Done?" class="To_Do_Done" />
+        <input type="text" name="Tp_DoItem" class="To_Do_Item" />
+        <input type="datetime" name="EntryDate" class="To_Do_EntryDate" />
+    </form>*@
 
-</section>
+<form class="To_Do">
+    <input type="checkbox" name=@Model.Done class="To_Do_Done" />
+    <input type="text" name=@Model.To_DoItem class="To_Do_Item" />
+    <input type="datetime" name=@Model.EntryDate class="To_Do_EntryDate" />
+</form>
+

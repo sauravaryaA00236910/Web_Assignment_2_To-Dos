@@ -28,6 +28,11 @@ namespace Web_Assignment_2_To_Dos
             services.AddRazorPages();
             //services.AddDbContext<To_DoContext>(
             //    options => options.UseSqlite("name = ConnectionString: DefaultConnection "));
+
+            services.AddDbContext<To_DoContext>(options =>
+            {
+                options.UseSqlite("Data Source=c:\\temp\\mydb.db;"); 
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
