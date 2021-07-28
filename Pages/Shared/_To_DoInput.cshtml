@@ -12,11 +12,17 @@
         <input type="datetime" name="EntryDate" class="To_Do_EntryDate" />
     </form>*@
 
-<form method="get" class="To_Do">
-    <label>Done? <input asp-for="@Model.Done" /></label>
+<!--<form method="get" class="To_Do">
+    <label>Done? <input type="checkbox" name="UpdateTo_do.Done" value="@Model.Done" /></label>-->
+    @*<input asp-for="@Model.Done" name="UpdateTo_do.Done"/>*@
     @*<input type="text" name=@Model.To_DoItem class="To_Do_Item" />*@
-    <input asp-for="@Model.To_DoItem" />
+    <!--<label>To Do Item: <input type="text" name="UpdateTo_do.To_DoItem" value="@Model.To_DoItem" /></label>-->
+    @*<input asp-for="@Model.To_DoItem" name="UpdateTo_do.To_DoItem" />*@
     @*<input type="datetime" name=@Model.EntryDate class="To_Do_EntryDate" />*@
-    <input asp-for="@Model.EntryDate" />
-</form>
+    <!--<label>Date Time: <input type="datetime" name="UpdateTo_do.EntryDate" value="@Model.EntryDate" /></label>-->
+    @*<input asp-for="@Model.EntryDate" name="UpdateTo_do.EntryDate" />*@
+    <!--<input type="submit" name="Delete" value="Delete" />
+    <input type="submit" name="Update" value="Update" />
+</form>-->
 
+z
