@@ -6,13 +6,13 @@
 }
 
 
-@*<form>
+<form>
     @foreach (var entry in Model.To_DoLog)
     {
-        <partial name="_To_DoInput" model ="@entry" />
+        <partial name="_To_DoInput" model="@entry" />
+        <input type="submit" name="Delete" value="Delete"/>
     }
-    <input type="submit" name="Submit" />
-</form>*@
+</form>
 
 <form asp-page="./Index" method="post">
     <label asp-for="To_do.Done">Done? </label><input asp-for="To_do.Done"/>

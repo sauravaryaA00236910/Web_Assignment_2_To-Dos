@@ -19,6 +19,7 @@ namespace Web_Assignment_2_To_Dos.Pages
         public IEnumerable<To_Do> To_DoLog;
 
         [FromForm]
+        [FromQuery]
         public To_Do To_do { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger, To_DoContext context)
@@ -29,11 +30,21 @@ namespace Web_Assignment_2_To_Dos.Pages
 
         public void OnGet()
         {
+            if(To_do !=null)
+            {
+                To_do.Done = false;
+                _context.To_Dos.Update(To_do);
+            }
             To_DoLog = _context.To_Dos.ToList();
         }
         public void OnPost()
         {
-            var x = To_do;
+            if (!String.IsNullOrEmpty(To_do.To_DoItem))
+            {
+                _context.To_Dos.Add(To_do);
+                _context.SaveChanges();
+            }
+            To_DoLog = _context.To_Dos.ToList();
         }
 
         //[FromForm]

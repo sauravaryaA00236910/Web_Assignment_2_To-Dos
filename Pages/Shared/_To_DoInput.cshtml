@@ -12,9 +12,11 @@
         <input type="datetime" name="EntryDate" class="To_Do_EntryDate" />
     </form>*@
 
-<form class="To_Do">
-    <input type="checkbox" name=@Model.Done class="To_Do_Done" />
-    <input type="text" name=@Model.To_DoItem class="To_Do_Item" />
-    <input type="datetime" name=@Model.EntryDate class="To_Do_EntryDate" />
+<form method="get" class="To_Do">
+    <label>Done? <input asp-for="@Model.Done" /></label>
+    @*<input type="text" name=@Model.To_DoItem class="To_Do_Item" />*@
+    <input asp-for="@Model.To_DoItem" />
+    @*<input type="datetime" name=@Model.EntryDate class="To_Do_EntryDate" />*@
+    <input asp-for="@Model.EntryDate" />
 </form>
 
