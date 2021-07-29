@@ -8,20 +8,21 @@
 @foreach (var entry in Model.To_DoLog)
 {
     <li>
-        <form method="Get">
-            <label>Done? <input type="checkbox" name="UpdateTo_do.Done" value="@entry.Done" /></label>
-            <label>To Do Item: <input type="text" name="UpdateTo_do.To_DoItem" value="@entry.To_DoItem" /></label>
-            <label>Date Time: <input type="datetime" name="UpdateTo_do.EntryDate" value="@entry.EntryDate" /></label>
-            @*<label>Date Time: <input type="hidden" name="UpdateTo_do.EntryDate" value="@entry.EntryDate"  /></label>*@
-            <input type="submit" name="Delete" value="Delete" />
-            <input type="submit" name="Update" value="Update" />
+        <!--<form method="Get">-->
+            @*<label>Done? <input type="checkbox" name="UpdateTo_do.Done" value="@entry.Done" /></label>*@
+            @*<label>To Do Item: <input type="text" name="UpdateTo_do.To_DoItem" value="@entry.To_DoItem" /></label>*@
+            @*<label>Date Time: <input type="datetime" name="UpdateTo_do.EntryDate" value="@entry.EntryDate" /></label>*@
+            @*<input type="submit" name="Delete" value="Delete" />*@
+            @*<input type="submit" name="Update" value="Update" />*@
             @*<partial name="_To_DoInput" model="@entry" />*@
-        </form>
+        <!--</form>-->
+        <partial name="_To_DoInput" model="@entry" />
     </li>
 }
 
 
 <form asp-page="./Index" method="post">
+    <h3>Enter you To Do List Item below: </h3>
     <label asp-for="To_do.Done">Done? </label><input asp-for="To_do.Done" />
     <label asp-for="To_do.To_DoItem">To_DoItem: </label><input asp-for="To_do.To_DoItem" />
     <label asp-for="To_do.EntryDate">EntryDate: </label><input asp-for="To_do.EntryDate" />
