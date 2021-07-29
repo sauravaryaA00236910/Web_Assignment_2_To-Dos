@@ -34,3 +34,9 @@
     <input type="submit" name="Update" value="Update" />
     @*<partial name="_To_DoInput" model="@entry" />*@
 </form>
+<form asp-page="To_doDelete" method="get">
+    <input type="hidden" value="@Model.Done" name="UpdateTo_do.Done" />
+    <input type="hidden" value="@Model.To_DoItem" name="UpdateTo_do.To_DoItem" />
+    <input type="hidden" value="@Model.EntryDate" name="UpdateTo_do.EntryDate" />
+    <input type="submit" value="Delete" />
+</form>
